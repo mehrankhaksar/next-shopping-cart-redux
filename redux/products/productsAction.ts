@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-import { IPRODUCTITEMS } from './productsType';
+import { IPRODUCTITEM } from './productsType';
 
 const fetchProductsRequest = () => {
   return {
@@ -8,7 +8,7 @@ const fetchProductsRequest = () => {
   };
 };
 
-const fetchProductsSuccess = (products: IPRODUCTITEMS[]) => {
+const fetchProductsSuccess = (products: IPRODUCTITEM[]) => {
   return {
     type: 'FETCH_PRODUCTS_SUCCESS',
     payload: products,

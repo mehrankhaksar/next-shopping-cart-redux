@@ -34,7 +34,7 @@ const ProductDetails: FunctionComponent = () => {
           <p className="text-md font-medium text-justify lg:text-lg">
             {description}
           </p>
-          <div className="flex items-center gap-2 text-md lg:text-lg">
+          <div className="flex items-center gap-2 text-md font-medium lg:text-lg">
             <span className="font-semibold text-orange-500">Category:</span>
             {category}
           </div>

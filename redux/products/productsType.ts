@@ -1,14 +1,15 @@
 export interface IPRODUCTSSTATE {
   loading: boolean;
-  products: IPRODUCTITEMS[];
+  products: IPRODUCTITEM[];
   error: string;
 }
 
-export interface IPRODUCTITEMS {
+export interface IPRODUCTITEM {
   id: number;
   image: string;
   title: string;
   category: string;
-  price: string;
+  price: number;
   description: string;
+  quantity?: number;
 }

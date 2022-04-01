@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 
 const Navbar: FunctionComponent = () => {
   return (
-    <div className="w-full flex items-center h-20 shadow-md">
+    <div className="w-full h-20 flex items-center sticky top-0 bg-white shadow-md">
       <div className="max-w-6xl mx-auto w-full flex justify-between items-center px-5 xl:px-0">
         <Link href="/">
           <a className="text-xl font-semibold text-blue-500 tracking-wider lg:text-2xl">
