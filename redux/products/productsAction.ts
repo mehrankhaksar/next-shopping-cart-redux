@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { Dispatch } from 'redux';
+import { IPRODUCTITEMS } from './productsType';
 
 const fetchProductsRequest = () => {
   return {
@@ -6,7 +8,7 @@ const fetchProductsRequest = () => {
   };
 };
 
-const fetchProductsSuccess = (products: JSX.Element[]) => {
+const fetchProductsSuccess = (products: IPRODUCTITEMS[]) => {
   return {
     type: 'FETCH_PRODUCTS_SUCCESS',
     payload: products,
@@ -20,18 +22,18 @@ const fetchProductsFailure = (error: string) => {
   };
 };
 
-export const fetchProducts = () => {
-  return (dispatch) => {
+export const fetchProducts = (): any => {
+  return (dispatch: Dispatch): void => {
     dispatch(fetchProductsRequest());
     axios
-      .get('https://fakestoreapi.com')
+      .get('https://fakestoreapi.com/products')
       .then((respone) => {
         const products = respone.data;
-        fetchProductsSuccess(products);
+        dispatch(fetchProductsSuccess(products));
       })
       .catch((error) => {
         const errorMsg = error.message;
-        fetchProductsFailure(errorMsg);
+        dispatch(fetchProductsFailure(errorMsg));
       });
   };
 };

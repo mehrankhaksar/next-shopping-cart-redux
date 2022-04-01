@@ -7,7 +7,10 @@ const initialState: IPRODUCTSSTATE = {
   error: '',
 };
 
-const productsReducer = (state = initialState, action: AnyAction) => {
+const productsReducer = (
+  state = initialState,
+  action: AnyAction
+): IPRODUCTSSTATE => {
   switch (action.type) {
     case 'FETCH_PRODUCTS_REQUEST':
       return {

@@ -1,5 +1,14 @@
 export interface IPRODUCTSSTATE {
   loading: boolean;
-  products: JSX.Element[];
+  products: IPRODUCTITEMS[];
   error: string;
+}
+
+export interface IPRODUCTITEMS {
+  id: number;
+  image: string;
+  title: string;
+  category: string;
+  price: string;
+  description: string;
 }

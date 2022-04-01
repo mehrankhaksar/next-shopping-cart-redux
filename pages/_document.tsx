@@ -6,8 +6,13 @@ const Document: NextPage = () => {
   return (
     <div>
       <Html>
-        <Head />
-        <body dir="rtl">
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+          ></link>
+        </Head>
+        <body className="font-body">
           <Main />
           <NextScript />
         </body>
