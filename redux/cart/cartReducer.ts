@@ -1,7 +1,6 @@
 import { ICARTSTATE } from './cartType';
 import { AnyAction } from 'redux';
 import { sumProductItems } from '../../helper/functions';
-import { IPRODUCTITEM } from '../products/productsType';
 
 const initialState: ICARTSTATE = {
   selectedProductItems: [],
@@ -47,6 +46,7 @@ const cartReducer = (state = initialState, action: AnyAction): ICARTSTATE => {
         return {
           ...state,
           selectedProductItems: [...newSelectedProductItems],
+          ...sumProductItems(newSelectedProductItems),
         };
       } else {
         state.selectedProductItems[jIdx].quantity--;
@@ -54,6 +54,20 @@ const cartReducer = (state = initialState, action: AnyAction): ICARTSTATE => {
       return {
         ...state,
         ...sumProductItems(state.selectedProductItems),
+      };
+    case 'CLEAR_ALL_PRODUCTS':
+      return {
+        selectedProductItems: [],
+        productItemsCounter: 0,
+        totalPrice: 0,
+        checkout: false,
+      };
+    case 'CHECKOUT':
+      return {
+        selectedProductItems: [],
+        productItemsCounter: 0,
+        totalPrice: 0,
+        checkout: true,
       };
     default:
       return state;
