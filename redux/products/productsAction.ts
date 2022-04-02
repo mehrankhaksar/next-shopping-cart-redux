@@ -1,6 +1,6 @@
-import axios from 'axios';
-import { Dispatch } from 'redux';
 import { IPRODUCTITEM } from './productsType';
+import { Dispatch } from 'redux';
+import axios from 'axios';
 
 const fetchProductsRequest = () => {
   return {

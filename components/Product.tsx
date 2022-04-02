@@ -19,10 +19,11 @@ const Product: FunctionComponent<Props> = ({ itemData }: Props) => {
 
   const cartState = useAppSelector((state) => state.cart);
   const { selectedProductItems } = cartState;
+
   const dispatch = useAppDispatch();
 
   return (
-    <div className="flex flex-col justify-between gap-6 p-5 border-2 rounded-md transition-all duration-75 ease-out hover:shadow-xl">
+    <div className="flex flex-col gap-6 p-5 border-2 rounded-md transition-all duration-150 ease-out hover:shadow-xl">
       <img
         src={image}
         alt="Product"
@@ -32,10 +33,10 @@ const Product: FunctionComponent<Props> = ({ itemData }: Props) => {
         <h3 className="text-lg font-semibold text-blue-500">
           {shortenTitle(title)}
         </h3>
-        <span className="text-md font-medium xl:text-sm">{price}</span>
-        <div className="w-full flex justify-between items-center text-sm font-medium text-white xl:text-xs">
+        <span className="text-md font-medium">{price}</span>
+        <div className="w-full flex justify-between items-center text-white">
           <Link href={`/product/${id}`}>
-            <a className="tracking-wide bg-blue-500 py-2 px-4 rounded-sm xl:px-2">
+            <a className="text-sm tracking-wide bg-blue-500 py-2 px-3 rounded-sm xl:text-xs">
               Details
             </a>
           </Link>
@@ -57,7 +58,7 @@ const Product: FunctionComponent<Props> = ({ itemData }: Props) => {
             </div>
           ) : (
             <button
-              className="font-medium uppercase bg-orange-500 py-2 px-4 rounded-sm xl:px-2"
+              className="text-sm font-medium uppercase bg-orange-500 py-2 px-3 rounded-sm xl:text-xs"
               onClick={() => dispatch(addProduct(itemData))}
             >
               Add to Cart

@@ -1,5 +1,5 @@
-import { AnyAction } from 'redux';
 import { IPRODUCTSSTATE } from './productsType';
+import { AnyAction } from 'redux';
 
 const initialState: IPRODUCTSSTATE = {
   loading: false,
