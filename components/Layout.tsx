@@ -1,7 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import Navbar from './Navbar';
 
-const Layout: FunctionComponent = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const Layout: FunctionComponent = ({ children }: Props) => {
   return (
     <div className="w-full min-h-screen">
       <Navbar />
