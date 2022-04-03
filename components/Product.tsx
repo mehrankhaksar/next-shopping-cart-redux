@@ -23,17 +23,17 @@ const Product: FunctionComponent<Props> = ({ itemData }: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="flex flex-col gap-6 p-5 border-2 rounded-md transition-all duration-150 ease-out hover:shadow-xl">
+    <div className="flex flex-col gap-6 bg-white p-5 border-2 rounded-md transition-all duration-150 ease-out hover:shadow-xl">
       <img
         src={image}
         alt="Product"
         className="w-9/12 max-h-52 m-auto object-contain"
       />
       <div className="flex flex-col gap-2">
-        <h3 className="text-lg font-semibold text-blue-500">
+        <h3 className="text-base font-semibold text-blue-500">
           {shortenTitle(title)}
         </h3>
-        <span className="text-md font-medium">{price}</span>
+        <span className="text-md font-medium">{price}$</span>
         <div className="w-full flex justify-between items-center text-white">
           <Link href={`/product/${id}`}>
             <a className="text-sm tracking-wide bg-blue-500 py-2 px-3 rounded-sm xl:text-xs">

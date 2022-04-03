@@ -19,7 +19,7 @@ const ProductDetails: FunctionComponent = () => {
       style={{ minHeight: 'calc(100vh - 5rem)' }}
       className="w-full py-10 px-5 md:px-10"
     >
-      <div className="max-w-6xl mx-auto w-full h-full flex flex-col gap-10 p-5 border-2 rounded-md md:flex-row-reverse md:items-center md:p-10">
+      <div className="max-w-6xl mx-auto w-full h-full flex flex-col gap-10 bg-white p-5 border-2 rounded-md md:flex-row-reverse md:items-center md:p-10">
         <img
           src={selectedProductItem[0]?.image}
           alt="Product Details"

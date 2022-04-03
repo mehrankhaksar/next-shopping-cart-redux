@@ -17,18 +17,17 @@ const Cart: FunctionComponent = () => {
       <div className="max-w-6xl mx-auto w-full flex flex-col gap-8 py-10 px-5 md:grid md:grid-cols-6 md:px-10">
         <ul
           className={`space-y-5 ${
-            selectedProductItems.length === 0 && 'py-4 border-2 rounded-md'
+            selectedProductItems.length === 0 &&
+            'flex justify-center items-center bg-white py-4 border-2 rounded-md'
           } md:col-span-4`}
         >
           {selectedProductItems.length === 0 && (
-            <h3 className="text-2xl text-center text-black text-opacity-60">
-              Empty:(
-            </h3>
+            <h3 className="text-2xl text-black text-opacity-60">Empty:(</h3>
           )}
           {selectedProductItems.map((item) => (
             <li
               key={item.id}
-              className="w-full grid grid-cols-2 gap-4 py-4 px-2 border-2 rounded-md md:grid-cols-3 md:px-4"
+              className="w-full grid grid-cols-2 gap-4 py-4 bg-white px-2 border-2 rounded-md md:grid-cols-3 md:px-4"
             >
               <img
                 src={item.image}
@@ -59,7 +58,7 @@ const Cart: FunctionComponent = () => {
             </li>
           ))}
         </ul>
-        <div className="h-fit space-y-3 p-3 border-2 rounded-md md:col-span-2">
+        <div className="h-fit space-y-3 bg-white p-3 border-2 rounded-md md:col-span-2">
           <div className="flex items-center gap-1">
             <span className="font-medium">Total Products:</span>
             {productItemsCounter}
