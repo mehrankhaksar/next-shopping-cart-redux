@@ -33,7 +33,7 @@ const Product: FunctionComponent<Props> = ({ itemData }: Props) => {
         <h3 className="text-base font-semibold text-blue-500">
           {shortenTitle(title)}
         </h3>
-        <span className="text-md font-medium">{price}$</span>
+        <span className="text-sm font-medium">{price}$</span>
         <div className="w-full flex justify-between items-center text-white">
           <Link href={`/product/${id}`}>
             <a className="text-sm tracking-wide bg-blue-500 py-2 px-3 rounded-sm xl:text-xs">
