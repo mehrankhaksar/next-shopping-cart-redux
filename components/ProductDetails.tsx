@@ -14,8 +14,6 @@ const ProductDetails: FunctionComponent = () => {
     (item) => String(item.id) === id
   );
 
-  const { image, title, category, price, description } = selectedProductItem[0];
-
   return (
     <div
       style={{ minHeight: 'calc(100vh - 5rem)' }}
@@ -23,21 +21,25 @@ const ProductDetails: FunctionComponent = () => {
     >
       <div className="max-w-6xl mx-auto w-full h-full flex flex-col gap-10 p-5 border-2 rounded-md md:flex-row-reverse md:items-center md:p-10">
         <img
-          src={image}
+          src={selectedProductItem[0]?.image}
           alt="Product Details"
           className="w-full max-h-80 object-contain md:max-h-96"
         />
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-center text-blue-500 md:text-left lg:text-2xl">
-            {title}
+            {selectedProductItem[0]?.title}
           </h3>
-          <p className="text-sm font-medium text-justify">{description}</p>
+          <p className="text-sm font-medium text-justify">
+            {selectedProductItem[0]?.description}
+          </p>
           <div className="flex items-center gap-2 text-md font-medium">
             <span className="font-semibold text-orange-500">Category:</span>
-            {category}
+            {selectedProductItem[0]?.category}
           </div>
           <div className="w-full flex justify-between items-center text-md text-white">
-            <span className="bg-green-500 py-1.5 px-3 rounded-sm">{price}$</span>
+            <span className="bg-green-500 py-1.5 px-3 rounded-sm">
+              {selectedProductItem[0]?.price}$
+            </span>
             <Link href="/">
               <a className="bg-blue-500 py-1.5 px-3 rounded-sm transition-all duration-300 ease-out hover:text-blue-500 hover:bg-white">
                 Back to Shop

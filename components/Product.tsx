@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { Dispatch, FunctionComponent } from 'react';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import {
   addProduct,
