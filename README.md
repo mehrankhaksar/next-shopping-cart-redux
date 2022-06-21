@@ -1,6 +1,6 @@
 # Next Shopping Cart with Redux
 
-## https://next-shopping-cart-with-redux.netlify.app/
+## https://mk-next-shopping-cart-redux.netlify.app/
 
 ### Status
 
